@@ -1,6 +1,14 @@
 // Modern Derma Time Website JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+// Previously this file auto-initialized on DOMContentLoaded. That autoload has been removed
+// to allow manual control. Call `initializeDerma()` when you want to start the UI.
+
+let __dermaInitialized = false;
+
+function initializeDerma() {
+    if (__dermaInitialized) return;
+    __dermaInitialized = true;
+
     // Initialize all features
     initMobileMenu();
     initSmoothScrolling();
@@ -15,7 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
     initStatsCounter();
     initParallaxEffects();
     initPreloader();
-});
+}
+
+// Expose global initializer for manual bootstrapping and backwards compatibility
+window.initializeDerma = initializeDerma;
+
+// Optional: if you still want automatic initialization in some environments,
+// uncomment the following line to auto-run after DOM content is loaded.
+// document.addEventListener('DOMContentLoaded', initializeDerma);
 
 // Preloader
 function initPreloader() {
