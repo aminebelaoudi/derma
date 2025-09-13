@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initStatsCounter();
     initParallaxEffects();
-    initPreloader();
 });
 
 // // Preloader
