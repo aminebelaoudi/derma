@@ -17,25 +17,25 @@ document.addEventListener('DOMContentLoaded', function() {
     initPreloader();
 });
 
-// Preloader
-function initPreloader() {
-    const preloader = document.createElement('div');
-    preloader.className = 'preloader';
-    preloader.innerHTML = `
-        <div class="preloader-content">
-            <div class="preloader-logo">Derma<span>Time</span></div>
-            <div class="preloader-spinner"></div>
-        </div>
-    `;
-    document.body.appendChild(preloader);
+// // Preloader
+// function initPreloader() {
+//     const preloader = document.createElement('div');
+//     preloader.className = 'preloader';
+//     preloader.innerHTML = `
+//         <div class="preloader-content">
+//             <div class="preloader-logo">Derma<span>Time</span></div>
+//             <div class="preloader-spinner"></div>
+//         </div>
+//     `;
+//     document.body.appendChild(preloader);
     
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.classList.add('fade-out');
-            setTimeout(() => preloader.remove(), 500);
-        }, 1000);
-    });
-}
+//     window.addEventListener('load', () => {
+//         setTimeout(() => {
+//             preloader.classList.add('fade-out');
+//             setTimeout(() => preloader.remove(), 500);
+//         }, 1000);
+//     });
+// }
 
 // Enhanced Mobile Menu
 function initMobileMenu() {
