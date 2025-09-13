@@ -355,7 +355,8 @@ p {
   height: 100vh;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  /* Allow decorative elements (badge, CTA) to overflow so they're not clipped by the hero container */
+  overflow: visible;
 }
 
 .hero-background {
@@ -438,13 +439,14 @@ p {
   max-width: 900px;
   margin: 0 auto;
   padding-top: 80px;
-  z-index: 2;
+  z-index: 3; /* higher than header to ensure badge/CTA sit above */
   position: relative;
 }
 
 .hero-badge {
   display: inline-block;
-  margin-top: 5vh;
+  /* Use a fixed margin to avoid VH-based clipping on different screen sizes */
+  margin-top: 30px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -512,7 +514,7 @@ p {
   gap: var(--spacing-md);
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 /* Back to Top Button */
@@ -2270,6 +2272,11 @@ p {
   
   .about-content {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* Ensure hero content sits lower on desktop so header doesn't overlap badge/CTA */
+  .hero-content {
+    padding-top: 120px;
   }
 }
 
