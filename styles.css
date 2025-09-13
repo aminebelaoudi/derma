@@ -352,11 +352,12 @@ p {
 .hero {
   position: relative;
   min-height: 100vh;
-  height: 100vh;
+  height: 150vh;
   display: flex;
   align-items: center;
   /* Allow decorative elements (badge, CTA) to overflow so they're not clipped by the hero container */
   overflow: visible;
+  padding-bottom: 30px;
 }
 
 .hero-background {
@@ -439,14 +440,14 @@ p {
   max-width: 900px;
   margin: 0 auto;
   padding-top: 80px;
-  z-index: 3; /* higher than header to ensure badge/CTA sit above */
+  z-index: 2;
   position: relative;
 }
 
 .hero-badge {
   display: inline-block;
   /* Use a fixed margin to avoid VH-based clipping on different screen sizes */
-  margin-top: 30px;
+  margin-top: 50px !important;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
